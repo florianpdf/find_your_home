@@ -10,6 +10,14 @@ const render = (array) => {
   });
 };
 
+const checkIfEmpty = (array) => {
+  if (array.length === 0) {
+    cards.innerHTML = 'No house';
+  } else {
+    render(array);
+  }
+}
+
 // On change select (all / flat / house)
 const select = document.querySelector('.select');
 
@@ -18,7 +26,8 @@ select.addEventListener('click', () => {
   if (userInput === 'All') {
     render(houseToRent);
   } else {
-    render(houseToRent.filter((house) => house.type === userInput));
+    const houses = houseToRent.filter((house) => house.type === userInput);
+    checkIfEmpty(houses);
   }
 });
 
@@ -27,7 +36,7 @@ const textInput = document.querySelector('.search-input');
 textInput.addEventListener('input', () => {
   const userValueInput = textInput.value.toLowerCase();
   const houses = houseToRent.filter((house) => house.name.toLowerCase().includes(userValueInput));
-  render(houses);
+  checkIfEmpty(houses);
 });
 
 // On change (Show only available)
@@ -36,7 +45,7 @@ checkbox.addEventListener('click', () => {
   const checkboxValue = checkbox.checked;
   if (checkboxValue) {
     const houses = houseToRent.filter((house) => house.available);
-    render(houses);
+    checkIfEmpty(houses);
   } else {
     render(houseToRent);
   }
