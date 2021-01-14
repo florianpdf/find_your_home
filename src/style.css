@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: roboto, sans-serif;
+}
+h1 {
+  padding: 0;
+  margin: 0;
+}
+header {
+  height: 100px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(13, 125, 190);
+  color: white;
+}
+.cards {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  width: 200px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.card-img {
+  height: 200px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  background-size: cover;
+  background-position: center;
+  background-image: url("http://placekitten.com/200/300");
+}
+.card-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.card-body h2 {
+  margin: 10px 0px;
+}
+.card-button {
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+  background-color: lightblue;
+  width: 100%;
+}
+
+.filters {
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 20px;
+}
